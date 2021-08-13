@@ -55,7 +55,7 @@ def parameters():
     # params.score_preprocess = 'softmax'
     params.target_not_found_threshold = 0.00
     params.distractor_threshold = 99999
-    params.hard_negative_threshold = 0.45
+    params.hard_negative_threshold = 99999
     params.target_neighborhood_scale = 2.2
     params.dispalcement_scale = 0.7
     params.perform_hn_without_windowing = True
