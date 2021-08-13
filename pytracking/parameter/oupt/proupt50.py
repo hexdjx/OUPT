@@ -20,7 +20,7 @@ def parameters():
     params.target_memory_size = 17
     params.cs_threshold = 0.8
     params.cs_sum_threshold = 0.6
-    params.first_tr = 0.1
+    # params.first_tr = 0.1
     params.target_layer = ['layer2', 'layer3']
     params.target_repalce_method = 'first_in_first_out'  # min_weight  first_in_first_out
     #############################
