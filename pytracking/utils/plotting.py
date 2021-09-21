@@ -6,6 +6,7 @@ import cv2
 from mpl_toolkits.mplot3d import Axes3D
 
 #########################################################################################
+# my add
 def mesh_score(s):
     score = torch.squeeze(s.cpu()).numpy()
     [x, y] = np.shape(score)
@@ -24,21 +25,6 @@ def mesh_score(s):
     # plt.axis('off')
     # plt.show()
     # plt.savefig('score_map.png', format='png', dpi=300)
-
-def plot_scatter(psr, apce, psmd, det):
-    x_frame = [i + 1 for i in range(len(psr))]
-    plt.plot(x_frame, psr, color='red', linewidth=2.0, linestyle='-')
-    plt.plot(x_frame, apce, color='green', linewidth=2.0, linestyle='--')
-    plt.plot(x_frame, psmd, color='blue', linewidth=2.0, linestyle='-.')
-    # plt.plot(x_frame, det, color='black', linewidth=2.0, linestyle=':')
-
-    plt.title('Score index', fontsize=24)
-    plt.xlabel('video frame')
-    plt.ylabel('score index')
-
-    # 保存图片到本地
-    # plt.savefig('scale_precision.png', dpi=300, bbox_inches='tight')
-    plt.show()
 #########################################################################################
 
 def draw_figure(fig):
