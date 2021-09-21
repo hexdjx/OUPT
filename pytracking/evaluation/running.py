@@ -18,16 +18,6 @@ def _save_tracker_output(seq: Sequence, tracker: Tracker, output: dict):
 
     frame_names = [os.path.splitext(os.path.basename(f))[0] for f in seq.frames]
 
-###################################################
-    def save_vot_bb(file, data):
-        with open(file, 'w') as f:
-            for x in data:
-                if isinstance(x, int):
-                    f.write("{:d}\n".format(x))
-                else:
-                    f.write(','.join([vot_float2str("%.4f", i) for i in x]) + '\n')
-###################################################
-
     def save_bb(file, data):
         tracked_bb = np.array(data).astype(int)
         np.savetxt(file, tracked_bb, delimiter='\t', fmt='%d')
@@ -60,18 +50,8 @@ def _save_tracker_output(seq: Sequence, tracker: Tracker, output: dict):
                     save_bb(bbox_file, d)
             else:
                 # Single-object mode
-                # bbox_file = '{}.txt'.format(base_results_path)
-                # save_bb(bbox_file, data)
-
-                ###################################################
-                # Single-object mode
                 bbox_file = '{}.txt'.format(base_results_path)
-                try:
-                    save_bb(bbox_file, data)
-                except:
-                    save_vot_bb(bbox_file, data)
-        ###################################################
-
+                save_bb(bbox_file, data)
 
         elif key == 'time':
             if isinstance(data[0], dict):
