@@ -119,30 +119,3 @@ plot_results(trackers, dataset, 'OTB', merge_results=True, plot_types=('success'
 # dataset = get_dataset('lasot')
 # print_results(trackers, dataset, 'LaSOT', merge_results=True, plot_types=('success', 'prec', 'norm_prec'))
 ##################################################################################################
-
-# --Filtered per-sequence results--##############################################################
-# Print per sequence results for sequences where all trackers fail, i.e. all trackers have average overlap in percentage of less than 10.0
-# filter_criteria = {'mode': 'ao_max', 'threshold': 10.0}
-# dataset = get_dataset('otb', 'nfs', 'uav')
-# print_per_sequence_results(trackers, dataset, 'OTB+NFS+UAV', merge_results=True, filter_criteria=filter_criteria,
-#                            force_evaluation=False)
-
-# Print per sequence results for sequences where at least one tracker fails, i.e. a tracker has average overlap in percentage of less than 10.0
-# filter_criteria = {'mode': 'ao_min', 'threshold': 10.0}
-# dataset = get_dataset('otb', 'nfs', 'uav')
-# print_per_sequence_results(trackers, dataset, 'OTB+NFS+UAV', merge_results=True, filter_criteria=filter_criteria,
-#                            force_evaluation=False)
-
-# Print per sequence results for sequences where the trackers have differing behavior.
-# i.e. average overlap in percentage for different trackers on a sequence differ by at least 40.0
-# filter_criteria = {'mode': 'delta_ao', 'threshold': 40.0}
-# dataset = get_dataset('otb', 'nfs', 'uav')
-# print_per_sequence_results(trackers, dataset, 'OTB+NFS+UAV', merge_results=True, filter_criteria=filter_criteria,
-#                            force_evaluation=False)
-
-# Print per sequence results for all sequences
-# filter_criteria = None
-# dataset = get_dataset('otb', 'nfs', 'uav')
-# print_per_sequence_results(trackers, dataset, 'OTB+NFS+UAV', merge_results=True, filter_criteria=filter_criteria,
-#                            force_evaluation=False)
-######################################################################################
