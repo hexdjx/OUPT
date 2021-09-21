@@ -189,29 +189,6 @@ class ATOMSampler(TrackingSampler):
                          frame_sample_mode=frame_sample_mode)
 
 
-################################################################
-class VerifyNetSampler(TrackingSampler):
-    """ See TrackingSampler."""
-
-    def __init__(self, datasets, p_datasets, samples_per_epoch, max_gap,
-                 num_test_frames=1, num_train_frames=1, processing=no_processing, frame_sample_mode='interval'):
-        super().__init__(datasets=datasets, p_datasets=p_datasets, samples_per_epoch=samples_per_epoch, max_gap=max_gap,
-                         num_test_frames=num_test_frames, num_train_frames=num_train_frames, processing=processing,
-                         frame_sample_mode=frame_sample_mode)
-
-
-class FusionNetSampler(TrackingSampler):
-    """ See TrackingSampler."""
-
-    def __init__(self, datasets, p_datasets, samples_per_epoch, max_gap,
-                 num_test_frames=2, num_train_frames=1, processing=no_processing, frame_sample_mode='interval'):
-        super().__init__(datasets=datasets, p_datasets=p_datasets, samples_per_epoch=samples_per_epoch, max_gap=max_gap,
-                         num_test_frames=num_test_frames, num_train_frames=num_train_frames, processing=processing,
-                         frame_sample_mode=frame_sample_mode)
-
-
-################################################################
-
 class LWLSampler(torch.utils.data.Dataset):
     """ Class responsible for sampling frames from training sequences to form batches. Each training sample is a
     tuple consisting of i) a set of train frames and ii) a set of test frames. The train frames, along with the
