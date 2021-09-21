@@ -49,4 +49,4 @@ def pack_trackingnet_results(tracker_name, param_name, run_id=None, output_name=
     # Remove raw text files
     shutil.rmtree(output_path)
 
-pack_trackingnet_results('oupt', 'proupt50_1', 0, 'OUPT')
+pack_trackingnet_results('oupt', 'proupt50', 0, 'OUPT')
