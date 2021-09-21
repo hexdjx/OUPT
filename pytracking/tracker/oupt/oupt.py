@@ -18,6 +18,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 ####################################################
+# my add
 def mesh_score(s):
     score = torch.squeeze(s.cpu()).numpy()
 
@@ -241,8 +242,8 @@ class OUPT(BaseTracker):
                 self.update_state(new_pos, sample_scales[scale_ind])
 
             # if self.params.after_scale:
-                ##############################################################
-                # my add
+            ##############################################################
+            # my add
             next_target_feat = self.generate_target_feat(im)
             f_model = FeatureFuse().cuda()
             next_target_feat = f_model(next_target_feat, self.params.target_layer)
@@ -267,7 +268,8 @@ class OUPT(BaseTracker):
                 self.update_target_memory(TensorList([next_target_feat]))
             else:
                 flag = 'uncertain'
-
+        #################################################
+        
         # ------- UPDATE ------- #
         update_flag = flag not in ['not_found', 'uncertain']
         hard_negative = (flag == 'hard_negative')
@@ -663,7 +665,6 @@ class OUPT(BaseTracker):
             replace_ind.append(r_ind)
 
         return replace_ind
-
     ###################################################################################
 
     def init_memory(self, train_x: TensorList):
