@@ -59,7 +59,7 @@ for seq in dataset:
         pred_bb =[gt[frame_num]]
         for i, s in enumerate(pred_bb, start=1):
             pred_s = s
-            i=9
+#             i=9
             tl = tuple(map(int,[pred_s[0], pred_s[1]]))
             br = tuple(map(int,[pred_s[0]+pred_s[2], pred_s[1]+pred_s[3]]))
             col = _tracker_disp_colors[i]
