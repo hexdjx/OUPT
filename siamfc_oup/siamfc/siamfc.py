@@ -150,6 +150,7 @@ class TrackerSiamFC(Tracker):
         self.avg_color = np.mean(img, axis=(0, 1))
 
         ##########################################
+        # my add
         target_patch = ops.crop_and_resize1(
             img, self.center, self.target_sz,
             out_size=self.cfg.image_target_size,
@@ -422,6 +423,7 @@ class TrackerSiamFC(Tracker):
         return self.labels
 
     ##################################################
+    # my add
     def init_target_memory(self, target_feat):
         # Initialize first-frame target samples
         self.num_init_targets = target_feat.size(0)
@@ -448,4 +450,4 @@ class TrackerSiamFC(Tracker):
                 ind = ind % (self.cfg.target_memory_size - 1)
                 train_samp[ind + 1, ...] = x
                 self.num_stored_targets[0] += 1
-##################################################
+     ##################################################
